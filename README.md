@@ -5,8 +5,9 @@
 ## docker
 ```
 docker run --name mariadb -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -idt mariadb --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-show variables like 'character%';#查看
 ```
+## 查看
+show variables like 'character%';
 
 ## 新增数据库
 ```
