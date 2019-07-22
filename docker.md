@@ -7,7 +7,7 @@ docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -it --name 
 ```
 # 安装Redis
 ```
-docker run -d --name myredis -p 6379:6379 redis --requirepass "mypassword"
+docker run -d --name myredis --restart=always -p 6379:6379 redis --requirepass "mypassword"
 ```
 
 # 安装 memcached
