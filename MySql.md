@@ -1,5 +1,3 @@
-# baseMe
-个人记录
 # MySQL
 
 ## docker
