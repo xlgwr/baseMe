@@ -31,5 +31,5 @@ abp new abpDemo -t mvc-module -o apbDemo
 * `.abp\templates`
    * `mvc-0.18.1.zip`
    * `mvc-module-0.18.1.zip`
-* **可在源码中把**`abp\templates`**压缩为zip文件**，**重命名为对应版本缓存**
+* **可在官方源码中把**`abp\templates`**中对应模块，压缩为zip文件**，**重命名为对应版本缓存**
 
