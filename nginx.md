@@ -10,8 +10,8 @@ upstream localhost {
       server 127.0.0.1:8081 weight=2;
 }
 server {
-    listen 8088;
-    listen [::]:8088;
+    listen 80;
+    listen [::]:80;
     # 接口服务的IP地址
     server_name localhost;
     charset utf-8;
@@ -28,4 +28,24 @@ server {
         # try_files $uri $uri/ /index.html;
     }
 }
+```
+
+## docker 文件
+
+```
+FROM nginx
+COPY ./nginx/customproxy.conf /etc/nginx/conf.d/ 
+RUN rm /etc/nginx/conf.d/default.conf
+EXPOSE 80
+CMD ["nginx","-g","daemon off;"] 
+```
+
+## 生成images
+```
+docker build -t nginxproxy .
+```
+
+## 启动容器：
+``` 
+docker run -it --name nginxproxy1 --restart=always -p 8088:80 -d nginxproxy
 ```
