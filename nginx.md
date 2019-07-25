@@ -2,12 +2,12 @@
 
 ## nginx配置文件
 
-## 配置主机host文件 ip 192.168.8.110 对应 www.abc.com 
+## 配置主机host文件 ip 127.0.0.1 对应 www.abc.com 
  
 ```
 upstream www.abc.com {
-      server 192.168.8.110:8080 weight=1;
-      server 192.168.8.110:8081 weight=2;
+      server 127.0.0.1:8080 weight=1;
+      server 127.0.0.1:8081 weight=2;
 }
 server {
     listen 80;
