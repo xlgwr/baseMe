@@ -1,6 +1,6 @@
 # 正式环境打包部署
 
-#* Nodejs Serve 方式
+# Nodejs Serve 方式
 * 安装，打包，运行
 ```
 npm install -g serve
@@ -10,7 +10,7 @@ npm run build
 serve -s dist -l 8088
 ```
 
-#* docker nginx 方式
+# docker nginx 方式
 * nginx 配置
 ```
 server {
@@ -43,7 +43,7 @@ server {
     }
 }
 ```
-* docker 文件
+# docker 文件
 ```
 FROM nginx
 COPY ./dist /var/www/html
