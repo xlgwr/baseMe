@@ -7,4 +7,9 @@
 net stop was /y
 net start w3svc
 ```
+# 跨域头
+```
+Response.AddHeader("Access-Control-Allow-Origin", "*");
+Response.AddHeader("Access-Control-Allow-Headers", "*");
+```
 
