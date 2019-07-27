@@ -10,6 +10,8 @@
  
 * [DotNet](dotnet.md)
 
+* [C# 常用扩展](cs.md)
+
 * [dotnet core 发布到IIS](IIS.md)
 
 * [ABP VNext ](abp.md)
