@@ -12,7 +12,7 @@ public static class BaseComm
         ///  with allData as(
         ///  Select * from XXX
         ///  ) 
-        /// 获取房屋分页列表数据
+        /// 获取分页列表数据
         /// </summary>
         public static IEnumerable<T> GetPageEntities<T>(int pageSize, int pageIndex, string where, string order="Id")
             where T : BaseEntityPage
