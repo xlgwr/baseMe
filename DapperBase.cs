@@ -1,7 +1,7 @@
 public class BaseEntityPage
 {
-public int num { get; set; }
- public int total { get; set; }
+	 public int num { get; set; }
+	 public int total { get; set; }
 }
     
 public static class BaseComm
