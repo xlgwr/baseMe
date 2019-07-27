@@ -1,13 +1,13 @@
-        public class BaseEntityPage
-    {
-       public int num { get; set; }
-       public int total { get; set; }
-    }
+public class BaseEntityPage
+{
+public int num { get; set; }
+ public int total { get; set; }
+}
     
 public static class BaseComm
 {
     
-    /// <summary>
+        /// <summary>
         ///  {0} 样例
         ///  with allData as(
         ///  Select * from XXX
