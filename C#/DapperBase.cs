@@ -76,7 +76,7 @@ namespace System
         public static Task<IEnumerable<T>> GetPageEntitiessync<T>(int pageSize, int pageIndex, string sqlFirst, string where, string order = "Id")
           where T : IEntityPage
         { 
-            where = !string.IsNullOrEmpty(where) ? string.Format(" where {0} ", where) : "";
+            where = !where.isNull() ? string.Format(" where {0} ", where) : "";
             string wherepage = string.Format("where num between  {0} and {1}", (pageIndex - 1) * pageSize + 1, pageIndex * pageSize);
 
             var allSql = new StringBuilder();
