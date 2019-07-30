@@ -73,7 +73,7 @@ namespace System
 
             return viewList;
         }
-        public static async Task<IEnumerable<T>> GetPageEntitiessync<T>(int pageSize, int pageIndex, string sqlFirst, string where, string order = "Id")
+        public static Task<IEnumerable<T>> GetPageEntitiessync<T>(int pageSize, int pageIndex, string sqlFirst, string where, string order = "Id")
           where T : IEntityPage
         { 
             where = !string.IsNullOrEmpty(where) ? string.Format(" where {0} ", where) : "";
@@ -97,8 +97,8 @@ namespace System
 
             ", sqlFirst, order, where, wherepage);
 
-            IEnumerable<T> viewList = await GetDatasync<T>(allSql.ToString()); 
-            return viewList;
+              return GetDatasync<T>(allSql.ToString()); 
+          
         }
 
         public static IEnumerable<T> GetData<T>(string sql)
@@ -106,9 +106,9 @@ namespace System
             IEnumerable<T> viewList = DapperHelper.GetAppMall.Query<T>(sql);
             return viewList;
         }
-        public static async Task<IEnumerable<T>> GetDatasync<T>(string sql)
+        public static Task<IEnumerable<T>> GetDatasync<T>(string sql)
         {
-            return await DapperHelper.GetAppMall.QueryAsync<T>(sql);
+            return DapperHelper.GetAppMall.QueryAsync<T>(sql);
         }
     }
 }
