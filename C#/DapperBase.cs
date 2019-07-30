@@ -110,5 +110,38 @@ namespace System
         {
             return DapperHelper.GetAppMall.QueryAsync<T>(sql);
         }
+	public static string GetSqls(List<WhereList> valuelist, string likeValue)
+        {
+            int firstFalg = 0;
+            var strSQlb = new StringBuilder();
+            if (valuelist.Count > 0)
+            {
+                foreach (var item in valuelist)
+                {
+                    int hasAnd = 0;
+                    if (likeValue.isNull() && firstFalg == 0)
+                    {
+                        hasAnd = 0;
+                    }
+                    else
+                    {
+                        hasAnd = item.andorFlag <= 0 ? 1 : item.andorFlag;
+                    }
+
+                    switch (item.andLikeFlag)
+                    {
+                        case 3:
+                            strSQlb.AppendLine(item.colName.toAndOrSql(item.colValue, hasAnd));
+                            break;
+                        default:
+                            strSQlb.AppendLine(item.colName.toLikeSql(item.colValue, hasAnd, item.andLikeFlag));
+                            break;
+                    }
+                    firstFalg++;
+                }
+
+            }
+            return strSQlb.ToString();
+        }
     }
 }
