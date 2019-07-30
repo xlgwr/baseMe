@@ -1,0 +1,9 @@
+{
+	"pageindex":1,
+	"pagesize":10,
+	"where":"",
+	"wherelist":[
+		{ "colName":"XX","colValue":"29","andorFlag":2,"andLikeFlag":1},
+		{ "colName":"XX","colValue":"FH","andorFlag":2,"andLikeFlag":1} 
+		]
+}
