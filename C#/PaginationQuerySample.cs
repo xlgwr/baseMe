@@ -14,37 +14,12 @@ public async Task<JsonResult> Index(PaginationQuery pQuery)
     int total = 0;
 
     string where = "";
-    string likeValue = pQuery.where;
-    var valuelist = pQuery.wherelist;
-    var strSQlb = new StringBuilder();        
-    int firstFalg = 0;
-    if (valuelist.Count > 0)
-    {
-        foreach (var item in valuelist)
-        {
-            int hasAnd = 0;
-            if (likeValue.isNull() && firstFalg == 0)
-            {
-                hasAnd = 0;
-            }
-            else
-            {
-                hasAnd = item.andorFlag <= 0 ? 1 : item.andorFlag;
-            }
-
-            switch (item.andLikeFlag)
-            {
-                case 3:
-                    strSQlb.AppendLine(item.colName.toAndOrSql(item.colValue, hasAnd));
-                    break;
-                default:
-                    strSQlb.AppendLine(item.colName.toLikeSql(item.colValue, hasAnd, item.andLikeFlag));
-                    break;
-            }
-            firstFalg++;
-        }
-
-    }
+    
+    string likeValue = pQuery.where;    
+    var strSQlb = new StringBuilder();    
+    
+    var getAndSql = BaseComm.GetSqls(pQuery.wherelist, likeValue);
+    strSQlb.AppendLine(getAndSql);
 
     where = strSQlb.ToString();
 
