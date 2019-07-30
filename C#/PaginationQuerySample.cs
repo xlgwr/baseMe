@@ -18,6 +18,12 @@ public async Task<JsonResult> Index(PaginationQuery pQuery)
     string likeValue = pQuery.where;    
     var strSQlb = new StringBuilder();    
     
+     if (!likeValue.isNull())
+    {
+        strSQlb.AppendLine("xxxx".toLikeSql(likeValue, 0, 0));
+        strSQlb.AppendLine("ddddd".toLikeSql(likeValue, 2, 0)); 
+    } 
+    
     var getAndSql = BaseComm.GetSqls(pQuery.wherelist, likeValue);
     strSQlb.AppendLine(getAndSql);
 
