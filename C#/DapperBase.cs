@@ -130,8 +130,18 @@ namespace System
 
                     switch (item.andLikeFlag)
                     {
+                        case 0:
+                        case 1:
+                        case 2:
+                            strSQlb.AppendLine(item.colName.toLikeSql(item.colValue, hasAnd, item.andLikeFlag));
+                            break;
                         case 3:
-                            strSQlb.AppendLine(item.colName.toAndOrSql(item.colValue, hasAnd));
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                            strSQlb.AppendLine(item.colName.toAndOrSql(item.colValue, hasAnd, item.andLikeFlag));
                             break;
                         default:
                             strSQlb.AppendLine(item.colName.toLikeSql(item.colValue, hasAnd, item.andLikeFlag));
