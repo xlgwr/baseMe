@@ -303,17 +303,42 @@ namespace System
         /// <param name="m"></param>
         /// <param name="vaule"></param>
         /// <param name="isAnd">0:空,1:and,2:or</param>
-        /// <param name="flag"></param>
+        /// <param name="isEquleGeLt">3:=,4:>,5:<,6:!=<,7: is null,8:is NOT NULL /param>
         /// <returns></returns>
-        public static string toAndOrSql(this string m, string vaule, int isAnd = 0)
+        public static string toAndOrSql(this string m, string vaule, int isAnd = 0, int isEquleGeLt = 3)
         {
             if (m.isNull())
             {
                 return "";
             }
             string isOr = isAnd == 0 ? "" : isAnd == 1 ? "AND" : "OR";
+            var strResult = "";
+            switch (isEquleGeLt)
+            {
+                case 3:
+                    strResult = string.Format(" {0} {1} = N'{2}' ", isOr, m, vaule);
+                    break;
+                case 4:
+                    strResult = string.Format(" {0} {1} > '{2}' ", isOr, m, vaule);
+                    break;
+                case 5:
+                    strResult = string.Format(" {0} {1} < '{2}' ", isOr, m, vaule);
+                    break;
+                case 6:
+                    strResult = string.Format(" {0} {1} != N'{2}' ", isOr, m, vaule);
+                    break;
+                case 7:
+                    strResult = string.Format(" {0} {1} is NULL ", isOr, m, vaule);
+                    break;
+                case 8:
+                    strResult = string.Format(" {0} {1} is NOT NULL ", isOr, m, vaule);
+                    break;
+                default:
+                    strResult = string.Format(" {0} {1} = N'{2}' ", isOr, m, vaule);
+                    break;
+            }
 
-            return string.Format(" {0} {1} = N'{2}' ", isOr, m, vaule);
+            return strResult;
 
         }
         #endregion
