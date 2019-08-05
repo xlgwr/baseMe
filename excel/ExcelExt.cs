@@ -47,7 +47,15 @@ namespace System
                     sheet.ForceFormulaRecalculation = true;
                     wb.Write(fs);
                 }
-                File.Delete(filePath);
+                wb.Close();
+                try
+                {
+                    File.Delete(filePath);
+                }
+                catch (Exception)
+                { 
+
+                }
             }
             catch (Exception ex)
             {
