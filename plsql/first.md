@@ -16,20 +16,20 @@
 ## 编写规范
 * 注释
 
-** 单行注释 –
-** Select *from  emp  where empno=7788;--取得员工信息
+* 单行注释 –
+* Select * from  emp  where empno=7788;--取得员工信息
 
-** 多行注释
-** /*…..*/
+* 多行注释
+* /*…..*/
 
 * 标识符命名规范
-** 定义变量： v_为前缀   v_user
+* 定义变量： v_为前缀   v_user
 
-** 定义常量： c_为前缀   c_rate
+* 定义常量： c_为前缀   c_rate
 
-** 定义游标：  _cursor后缀 emp_cursor
+* 定义游标：  _cursor后缀 emp_cursor
 
-** 定义例外：  e_前缀   e_error
+* 定义例外：  e_前缀   e_error
 
 ## 块的介绍
 * 块（block）是pl/sql的基本程序单元，编写pl/sql程序实际上是编写pl/sql块，要完成相对简单的应用功能，
@@ -55,6 +55,7 @@ show error；
 ## 编写一个存储过程，该过程可以向表中添加记录
 * 块的示意图
 * Pl/sql块有三个部分构成：定义部分，执行部分，例外处理部分。
+```
 ```
 Declear
 
