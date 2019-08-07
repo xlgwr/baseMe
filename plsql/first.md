@@ -31,6 +31,60 @@
 
 * 定义例外：  e_前缀   e_error
 
+# 使用%TYPE
+* 定义一个变量，其数据类型与已经定义的某个数据变量的类型相同，
+* 或者与数据库表的某个列的数据类型相同，这时可以使用%TYPE。
+
+* 使用%TYPE特性的优点在于：
+ * 所引用的数据库列的数据类型可以不必知道；
+ * 所引用的数据库列的数据类型可以实时改变。
+
+```
+DECLARE
+   -- 用 %TYPE 类型定义与表相配的字段
+   TYPE t_Record IS RECORD(
+
+          T_no emp.empno%TYPE,
+
+          T_name emp.ename%TYPE,
+
+          T_sal emp.sal%TYPE );
+
+   -- 声明接收数据的变量
+
+   v_emp t_Record;
+
+BEGIN
+
+   SELECT empno, ename, sal INTO v_emp FROM emp WHERE empno=7788;
+
+   DBMS_OUTPUT.PUT_LINE
+
+(TO_CHAR(v_emp.t_no)||v_emp.t_name||TO_CHAR(v_emp.t_sal));
+
+END;
+```
+## 使用%ROWTYPE
+* PL/SQL 提供%ROWTYPE操作符, 返回一个记录类型, 其数据类型和数据库表的数据结构相一致。
+
+* 使用%ROWTYPE特性的优点在于：
+ * 所引用的数据库中列的个数和数据类型可以不必知道；
+ * 所引用的数据库中列的个数和数据类型可以实时改变。
+ ```
+ DECLARE
+
+    v_empno emp.empno%TYPE :=&no;
+    rec emp%ROWTYPE;
+
+BEGIN
+
+    SELECT * INTO rec FROM emp WHERE empno=v_empno;
+    DBMS_OUTPUT.PUT_LINE('姓名:'||rec.ename||'工资:'||rec.sal||'工作时间:'||rec.hiredate);
+
+END;
+ ```
+
+
 ## 块的介绍
 * 块（block）是pl/sql的基本程序单元，编写pl/sql程序实际上是编写pl/sql块，要完成相对简单的应用功能，
 * 可能只需要编写一个pl/sql块，但是要实现复杂的功能的时候就需要在一个pl/sql块中嵌套其他的pl/sql块
