@@ -1,4 +1,5 @@
 # Plsql:
+* https://blog.csdn.net/CarryBest/article/details/54949411
 * （procedural language/sql）是oracle在标准的sql语言上的扩展。
 *  Plsql不仅允许嵌入sql语言，还可以定义变量和常量，允许使用条件语句和循环语句，
 *  允许使用例外处理各种错误，这样是的使得它的功能边的强大。
