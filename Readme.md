@@ -2,7 +2,7 @@
 
 ## 数据库相关
 
-* [MS Sql](sql.md) [SQL 相关查询](sql/)
+* [MS Sql](sql.md)，[SQL 相关查询](sql/)
 
 * [MY Sql](MySql.md)
 
