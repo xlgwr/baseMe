@@ -13,6 +13,11 @@ choco help
 ```
 * 如果出现一些有用的帮助信息，比如 Chocolatey 的版本号，安装到的目录，相关的命令，还有示例等等，这就说明我们已经可以在系统上使用 Chocolatey 了。
 
+## 更新
+```
+choco upgrade chocolatey
+```
+
 ## 使用
 * Chocolatey的使用也很简单，使用指令如下：
 ```
