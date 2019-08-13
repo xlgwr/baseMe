@@ -8,7 +8,7 @@ http://f1361db2.m.daocloud.io
 ```
 docker volume create mssqldata
 
-docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -it --name sql2017fh --restart=always -p 1433:1433 -e 'TZ=Asia/Shanghai' -v mssqldata:/var/opt/mysql -v D:\DB\mssql:/tmp/hostDB -d mcr.microsoft.com/mssql/server:2017-latest
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -it --name sql2017fh --restart=always -p 1433:1433 -e 'TZ=Asia/Shanghai' -v mssqldata:/var/opt/mysql -v D:\DB\mssql:/tmp/hostDB -d mcr.microsoft.com/mssql/server:2017-latest-ubuntu
 ```
 ---
 # 安装Oracle
