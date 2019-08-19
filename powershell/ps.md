@@ -1,4 +1,4 @@
-# 快速始动当前目录下Exe
+# 快速启动当前目录下Exe
 ```
 $fileList = Get-ChildItem "." -recurse *.exe | %{$_.FullName}
 Foreach($file in $fileList){ & $file; write-host $file; sleep 2; }
