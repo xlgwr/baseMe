@@ -41,6 +41,22 @@ services:
       - 5500:5500
 ```
 ---
+# 安装 mongo
+```
+docker run -d --network some-network --name some-mongo \
+    -e MONGO_INITDB_ROOT_USERNAME=mongoadmin \
+    -e MONGO_INITDB_ROOT_PASSWORD=secret \
+    mongo
+```
+
+# 安装 rabbit
+```
+docker run -d --hostname my-rabbit --name some-rabbit \
+      -p 8080:15672 \
+      -e RABBITMQ_DEFAULT_USER=user \
+      -e RABBITMQ_DEFAULT_PASS=password \
+      rabbitmq:3-management
+```
 
 # 安装Redis
 ```
