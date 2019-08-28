@@ -73,7 +73,7 @@ namespace System
             };
             return defaultV;
         }
-        public static bool Contains(this string m, List<string> checkV)
+         public static bool Contains(this string m, List<string> checkV)
         {
             if (m.isNull() || checkV == null)
             {
@@ -81,14 +81,28 @@ namespace System
             }
             foreach (var item in checkV)
             {
-                if (item.isNull())
-                {
-                    continue;
-                }
-                if (m.ToLower().Contains(item.ToLower()))
+                if (m.ContainsWithLower(item))
                 {
                     return true;
                 }
+            }
+            return false;
+        }
+        /// <summary>
+        /// 字符串
+        /// </summary>
+        /// <param name="m"></param>
+        /// <param name="checkV"></param>
+        /// <returns></returns>
+        public static bool ContainsWithLower(this string m, string checkV)
+        {
+            if (m.isNull() || checkV.isNull())
+            {
+                return false;
+            }
+            if (m.ToLower().Contains(checkV.ToLower()))
+            {
+                return true;
             }
             return false;
         }
