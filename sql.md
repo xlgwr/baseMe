@@ -10,3 +10,23 @@ ob as (
 )
 SELECT * FROM ob;
 ````
+
+## 使用语句查看一个存储过程的定义
+```
+EXEC sp_helptext  'Auth_BankCardAuthorize'
+```
+ 
+
+ 
+
+## 查询所有存储过程的名称以及定义
+```
+
+SELECT name, definition
+
+FROM sys.sql_modules AS m
+
+INNER JOIN sys.all_objects AS o ON m.object_id = o.object_id
+
+WHERE o.[type] = 'P'
+```
