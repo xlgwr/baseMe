@@ -43,8 +43,7 @@ services:
 ---
 # 安装 mongo
 ```
-docker run -d --network some-network --name some-mongo -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=secret 
-    mongo
+docker run -d --network some-network --name some-mongo -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=secret mongo
 ```
 
 # 安装 rabbit
