@@ -48,7 +48,7 @@ docker run -d --network some-network --name some-mongo -e MONGO_INITDB_ROOT_USER
 
 # 安装 rabbit
 ```
-docker run -d --hostname my-rabbit --name some-rabbit -p 15672:15672 -e RABBITMQ_DEFAULT_USER=user -e RABBITMQ_DEFAULT_PASS=password rabbitmq:3-management
+docker run -d --hostname my-rabbit --name some-rabbit -p 5671-5672:5671-5672 -p 15671-15672:15671-15672 -e RABBITMQ_DEFAULT_USER=user -e RABBITMQ_DEFAULT_PASS=password rabbitmq:3-management
 ```
 
 # 安装Redis
