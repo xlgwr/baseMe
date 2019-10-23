@@ -4,3 +4,8 @@
 * Visual Studio 2019 Professional
 * NYWVH-HT4XC-R2WYW-9Y3CM-X4V3Y
  
+ 
+ # 初始化
+ ```
+ devenv.exe /setup /resetuserdata /resetsettings
+ ```
