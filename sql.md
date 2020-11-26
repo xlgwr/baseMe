@@ -1,3 +1,7 @@
+# SQLPrompt 最新版下载地址
+
+[https://download.red-gate.com/SQLPromptDownload.exe]
+
 # MS SQL 分页
 ````sql
 with oa as (
