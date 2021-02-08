@@ -2,9 +2,9 @@
 
 ```
   <PropertyGroup>
-    <IceHome>C:\Users\fd110\.nuget\packages\zeroc.ice.net\3.7.5\</IceHome>
+    <IceHome>XXX\.nuget\packages\zeroc.ice.net\3.7.5\</IceHome>
   </PropertyGroup>
   <PropertyGroup>
-    <IceToolsPath>C:\Users\fd110\.nuget\packages\zeroc.ice.net\3.7.5\tools\</IceToolsPath>
+    <IceToolsPath>XXX\.nuget\packages\zeroc.ice.net\3.7.5\tools\</IceToolsPath>
   </PropertyGroup>
 ```
