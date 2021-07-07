@@ -10,6 +10,30 @@ docker volume create mssqldata
 
 docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -it --name sql2017fh --restart=always -p 1433:1433 -e 'TZ=Asia/Shanghai' -v mssqldata:/var/opt/mysql -v D:\DB\mssql:/tmp/hostDB -d mcr.microsoft.com/mssql/server:2017-latest-ubuntu
 ```
+# docker-compose
+## save to file docker-compose.yml
+```
+docker-compose up
+```
+```
+version: '3.4'
+
+services:
+    sqldata:
+        image: mcr.microsoft.com/mssql/server:2019-latest 
+        environment:
+            - SA_PASSWORD=Pass@word
+            - ACCEPT_EULA=Y
+            - TZ=Asia/Shanghai
+        ports:
+            - "5435:1433"
+        volumes:
+            - test-sqldata:/var/opt/mssql
+            - F:\DB\bak:/tmp/bakdb
+volumes:
+    test-sqldata:
+        external: false
+```
 ---
 # 安装Oracle
 
