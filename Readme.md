@@ -33,6 +33,9 @@
 
 * [nginx](nginx.md)
 
+## MediarT 相关
+* [mediatr-vs-services] (https://medium.com/@iamprovidence/mediatr-vs-services-or-why-slices-architecture-better-2e1eb4afae43)
+
 ## 其它相关
 
 * [excel相关类库](excel/)
